@@ -1,0 +1,450 @@
+
+:root {
+    --azul-escuro: #12345b;
+    --azul-principal: #1d5d99;
+    --azul-claro: #eaf3fb;
+    --azul-medio: #d5e7f7;
+    --branco: #ffffff;
+    --fundo: #f7f9fc;
+    --texto: #263445;
+    --texto-secundario: #64748b;
+    --borda: #e1e8f0;
+    --sombra: 0 8px 24px rgba(18, 52, 91, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--branco);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: min(1120px, 90%);
+    margin: 0 auto;
+}
+
+.cabecalho {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--branco);
+    border-bottom: 1px solid var(--borda);
+}
+
+.navegacao {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.logo {
+    color: var(--azul-escuro);
+    font-size: 1.35rem;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: var(--azul-principal);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+nav a {
+    color: var(--texto);
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: var(--azul-principal);
+}
+
+a:focus-visible {
+    outline: 3px solid var(--azul-principal);
+    outline-offset: 4px;
+    border-radius: 3px;
+}
+
+.hero {
+    padding: 100px 0;
+    background: linear-gradient(135deg, var(--azul-claro), #f8fbff 70%);
+}
+
+.hero-conteudo {
+    max-width: 780px;
+}
+
+.subtitulo {
+    margin-bottom: 10px;
+    color: var(--azul-principal);
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    max-width: 760px;
+    margin-bottom: 22px;
+    color: var(--azul-escuro);
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    line-height: 1.13;
+    letter-spacing: -1.5px;
+}
+
+.hero-descricao {
+    max-width: 650px;
+    margin-bottom: 30px;
+    color: var(--texto-secundario);
+    font-size: 1.1rem;
+}
+
+.botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 12px 24px;
+    border: 2px solid var(--azul-principal);
+    border-radius: 8px;
+    background-color: var(--azul-principal);
+    color: var(--branco);
+    font-weight: 700;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.botao:hover {
+    background-color: var(--azul-escuro);
+    border-color: var(--azul-escuro);
+    transform: translateY(-2px);
+}
+
+.secao {
+    padding: 76px 0;
+}
+
+.titulo-secao {
+    max-width: 680px;
+    margin: 0 auto 38px;
+    text-align: center;
+}
+
+.titulo-secao h2,
+.sobre h2 {
+    margin-bottom: 12px;
+    color: var(--azul-escuro);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    line-height: 1.2;
+}
+
+.titulo-secao > p:last-child {
+    color: var(--texto-secundario);
+}
+
+.grade-categorias {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.categoria {
+    padding: 26px 22px;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    background-color: var(--branco);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.categoria:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--sombra);
+}
+
+.categoria-icone {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 18px;
+    border-radius: 12px;
+    background-color: var(--azul-claro);
+    font-size: 1.6rem;
+}
+
+.categoria h3 {
+    margin-bottom: 8px;
+    color: var(--azul-escuro);
+    font-size: 1.08rem;
+}
+
+.categoria p {
+    color: var(--texto-secundario);
+    font-size: 0.92rem;
+}
+
+.secao-destaques {
+    background-color: var(--fundo);
+}
+
+.grade-livros {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.livro {
+    overflow: hidden;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    background-color: var(--branco);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.livro:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--sombra);
+}
+
+.capa {
+    min-height: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 26px;
+    color: var(--branco);
+}
+
+.capa-tecnologia {
+    background: linear-gradient(145deg, #12345b, #2676b8);
+}
+
+.capa-administracao {
+    background: linear-gradient(145deg, #284c73, #5d8ab3);
+}
+
+.capa-aprendizado {
+    background: linear-gradient(145deg, #1c5d68, #57a6a3);
+}
+
+.capa-categoria {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+}
+
+.capa-titulo {
+    max-width: 230px;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.12;
+}
+
+.livro-conteudo {
+    padding: 24px;
+}
+
+.livro-categoria {
+    margin-bottom: 7px;
+    color: var(--azul-principal);
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.livro-conteudo h3 {
+    margin-bottom: 10px;
+    color: var(--azul-escuro);
+    font-size: 1.2rem;
+}
+
+.livro-conteudo > p:last-child {
+    color: var(--texto-secundario);
+    font-size: 0.95rem;
+}
+
+.sobre {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.sobre-texto > p:not(.subtitulo) {
+    margin-top: 14px;
+    color: var(--texto-secundario);
+}
+
+.sobre-destaque {
+    padding: 34px;
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+    background-color: var(--azul-claro);
+}
+
+.sobre-icone {
+    display: inline-block;
+    margin-bottom: 14px;
+    font-size: 2.5rem;
+}
+
+.sobre-destaque h3 {
+    margin-bottom: 10px;
+    color: var(--azul-escuro);
+    font-size: 1.35rem;
+}
+
+.sobre-destaque p {
+    color: var(--texto-secundario);
+}
+
+.rodape {
+    padding: 30px 0;
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+}
+
+.rodape-conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo-rodape {
+    color: var(--branco);
+}
+
+.logo-rodape span {
+    color: #9bc9f0;
+}
+
+.rodape-conteudo p {
+    font-size: 0.82rem;
+    opacity: 0.85;
+}
+
+@media (max-width: 900px) {
+    .grade-categorias {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grade-livros {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .sobre {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .rodape-conteudo {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 92%;
+    }
+
+    .navegacao {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    nav {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 16px;
+    }
+
+    nav a {
+        font-size: 0.82rem;
+    }
+
+    .hero {
+        padding: 60px 0;
+    }
+
+    .hero h1 {
+        letter-spacing: -0.8px;
+    }
+
+    .hero-descricao {
+        font-size: 1rem;
+    }
+
+    .secao {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .grade-categorias,
+    .grade-livros,
+    .sobre {
+        grid-template-columns: 1fr;
+    }
+
+    .categoria {
+        padding: 22px;
+    }
+
+    .capa {
+        min-height: 200px;
+    }
+
+    .sobre {
+        gap: 15px;
+    }
+
+    .rodape-conteudo {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
